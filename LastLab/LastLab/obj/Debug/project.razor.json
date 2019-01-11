@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "e:\\Fac Files\\Map\\LastLab\\LastLab\\LastLab\\LastLab.csproj",
+  "TargetFramework": "v4.7.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

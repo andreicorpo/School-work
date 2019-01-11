@@ -29,6 +29,11 @@ namespace LastLab
             InitializeComponent();
         }
 
+        /*
+        function called when the Start button is called
+        which randomizes the pieces' positions
+         */
+
         private void BtnStart_Click(object sender, RoutedEventArgs e)
         {
             Random rnd = new Random();
@@ -74,10 +79,15 @@ namespace LastLab
             gameStarted = true;
         }
 
+        /*
+        function called by each piece(button) from the puzzle
+         */
         private void BtnPiece_Click(object sender, RoutedEventArgs e)
         {
             if (gameStarted && !gameEnded)
             {
+                //if game is running(started and not ended),
+                //this next part interchanges the pieces
                 Button btn = sender as Button;
                 String str = btn.GetValue(ContentProperty).ToString();
                 int row = Grid.GetRow(btn);
@@ -107,6 +117,10 @@ namespace LastLab
             
         }
 
+        /*
+        function to get a child at a given position
+         */
+
         private static UIElement GetChildren(Grid grid, int row, int column)
         {
             foreach (UIElement child in grid.Children)
@@ -121,6 +135,9 @@ namespace LastLab
             return null;
         }
 
+        /*
+        check is the given position is the position of the space tile
+         */
         private Button IsSpaceTile(int row, int columnn)
         {
             Button btn = GetChildren(Pieces, row, columnn + 1) as Button;
@@ -158,8 +175,14 @@ namespace LastLab
             return null;
         }
 
+        /*
+        function to close the app
+         */
         private void BtnClose_Click(object sender, RoutedEventArgs e) => Close();
 
+        /*
+        function to check if the game ended by looking at all the pieces and checking if they are in the right order
+         */
         private void CheckEndGame()
         {
             bool ok = true;
@@ -185,6 +208,10 @@ namespace LastLab
                 MessageBox.Show("You won!");
             }
         }
+
+        /*
+        function to cut the initial background image to the playable pieces
+         */
 
         private void CutImage()
         {
